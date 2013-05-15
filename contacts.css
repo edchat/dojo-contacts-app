@@ -10,5 +10,25 @@
 }
 
 .hidden {
-	display: none;
+	display: none !important;
+}
+
+
+.mblFormLayout {
+	margin: 8px;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.mblFormLayout > * > *:first-child {
+	font-weight: normal;
+	color: gray;
+}
+
+.mblFormLayoutReadOnly .mblTextArea {
+	background-color: rgba(0, 0, 0, 0);
+	border-width: 0px;
+}
+
+.mblFormLayout .mblTextArea {
+	font-weight: bold;
 }
