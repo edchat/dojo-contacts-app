@@ -1,7 +1,7 @@
 // we use 'define' and not 'require' to workaround Dojo build system limitation that prevents from making of this file
 // a layer if it using 'require' (see: https://bugs.dojotoolkit.org/ticket/16905)
-define(["dojo/sniff", "dojo/request", "dojo/json", "dojo/text!contactsApp/contacts.json", "dojox/app/main", "dojox/mobile/common"],
-	function(has, request, json, config, Application, common){
+define(["dojo/sniff", "dojo/request", "dojo/json", "dojo/text!contactsApp/contacts.json", "dojox/app/main", "dojox/mobile/common", "dojo/dom"],
+	function(has, request, json, config, Application, common, dom){
 
 	// if we exclude the cordova trick the init could be as simple as:
 	// has.add("html5history", !has("ie") || has("ie") > 9);
@@ -13,7 +13,8 @@ define(["dojo/sniff", "dojo/request", "dojo/json", "dojo/text!contactsApp/contac
 		// populate has flag on whether html5 history is correctly supported or not
 		has.add("html5history", !has("ie") || has("ie") > 9);
 		has.add("phone", ((window.innerWidth || document.documentElement.clientWidth) <= common.tabletSize));
-		Application(json.parse(config));
+		//Application(json.parse(config));
+		Application(json.parse(config), dom.byId("theApp"));
 	};
 	// check if cordova project's here
 	request("../dcordova/sniff.js").then(function(){

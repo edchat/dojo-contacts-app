@@ -1,3 +1,12 @@
+.ios7body{
+	position: relative;
+}
+.ios7body:before {
+	content: "";
+	height: 20pt;
+	display: block;
+}
+
 @media screen and (min-width: 501px) {
   	.leftpanel {
     	width: 250px;

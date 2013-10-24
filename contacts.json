@@ -16,7 +16,7 @@
 	"controllers": [
 		"dojox/app/controllers/Load",
 		"dojox/app/controllers/Transition",
-		"dojox/app/controllers/Layout"
+		"contactsApp/controllers/ios7StatusBarLayout"
 	],
 	"nls": "contactsApp/nls/contacts",
 	"defaultTransition": "slide",
