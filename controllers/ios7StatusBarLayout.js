@@ -1,18 +1,34 @@
 define(["dojo/_base/declare", "dojo/_base/lang", "dojo/dom", "dojo/dom-geometry", "dojo/dom-style",
 	"dojo/dom-class", "dojox/mobile/sniff", "dojo/_base/window", "dojox/app/controllers/Layout"],
 function(declare, lang, dom, domGeom, domStyle, domClass, has, win, Layout){
-//	define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/array", "dojo/_base/window",
-//			"dojo/query", "dojo/dom-geometry", "dojo/dom-attr", "dojo/dom-style", "dijit/registry",
-//			"./LayoutBase", "../utils/layout", "../utils/constraints"],
-//	function(declare, lang, array, win, query, domGeom, domAttr, domStyle, registry, LayoutBase, layout, constraints){
 
 
 	// module:
-	//		dojox/app/tests/mediaQuery3ColumnApp/controllers/CssLayout
+	//		contactsApp/controllers/ios7StatusBarLayout
 	// summary:
-	//		Will layout an application with a BorderContainer.  
-	//		Each view to be shown in a region of the BorderContainer will be wrapped in a StackContainer and a ContentPane.
-	//		
+	//		This custom layout controller will add space above the body to work around the iOS7 Status Bar problem.
+	//
+	//		In order to be able to use this custom controller you will need to do the following:
+	//
+	// 		1) Add the line below to your index.html inside the body.
+	//		<div id="theApp" style="position: absolute"></div>
+	//
+	//		2) Update the js file which creates the app to use dom.byId("theApp") when creating the app.
+	//		Application(config, dom.byId("theApp"));
+	//
+	//		3) Add this to the applications css file.
+	//		.ios7body{
+	//			position: relative;
+	//		}
+	//		.ios7body:before {
+	//			content: "";
+	//			height: 20pt;
+	//			display: block;
+	//		}
+	//
+	//		4) Update the config to use the custom layout controller, replace "dojox/app/controllers/Layout" with this.
+	//		"contactsApp/controllers/ios7StatusBarLayout"
+
 
 	return declare("contactsApp/controllers/ios7StatusBarLayout", Layout, {
 
