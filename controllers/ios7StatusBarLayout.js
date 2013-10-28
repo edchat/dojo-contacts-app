@@ -42,8 +42,7 @@ function(declare, lang, dom, domGeom, domStyle, domClass, has, win, Layout){
 			//		{event : handler}
 
 			// if on iOS7 add the ios7body class to the body, and in _doResize adjust the height
-			var ios7 = has("ios") >= 7;
-			if(ios7){
+			if(has("ios") >= 7){
 				var body = dom.byId("theApp").parentNode;
 				domClass.add(body, "ios7body");
 			}
@@ -89,12 +88,11 @@ function(declare, lang, dom, domGeom, domStyle, domClass, has, win, Layout){
 			}else{
 				// if we are layouting the top level app the above code does not work when hiding address bar
 				// so let's use similar code to dojo mobile.
-				var ios7 = has("ios") >= 7;
-				if(ios7){
+				if(has("ios") >= 7){
 					view._contentBox = {
 						l: 0,
 						t: 0,
-						h: win.global.innerHeight-27 || win.doc.documentElement.clientHeight -27,
+						h: win.global.innerHeight-20 || win.doc.documentElement.clientHeight -20,
 						w: win.global.innerWidth || win.doc.documentElement.clientWidth
 					};
 				}else{
